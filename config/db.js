@@ -2,9 +2,7 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   await mongoose
-    .connect(
-      "mongodb+srv://usmanhaiderali:7i9mVy6iYBwo7W15@postopia.kzlrp.mongodb.net/?retryWrites=true&w=majority&appName=Postopia"
-    )
+    .connect(process.env.MONGO_URL)
     .then(() => {
       console.log("Database connected successfully");
     })

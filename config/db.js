@@ -2,14 +2,15 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   await mongoose
-    .connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
+    .connect(
+      "mongodb+srv://usmanhaiderali:7i9mVy6iYBwo7W15@postopia.kzlrp.mongodb.net/?retryWrites=true&w=majority&appName=Postopia"
+    )
     .then(() => {
       console.log("Database connected successfully");
     })
-    .catch((err) => console.log("MongoDB connection error: ", err));
+    .catch((err) => {
+      console.log("MongoDB connection error: ", err);
+    });
 };
 
 module.exports = connectDB;

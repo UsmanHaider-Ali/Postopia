@@ -1,8 +1,15 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 const connectDB = async () => {
+  const uri = process.env.MONGO_URL_STRING;
+
+  if (!uri) {
+    throw new Error("Connecting string is not defined in .env file");
+  }
+
   await mongoose
-    .connect(process.env.MONGO_URL)
+    .connect(uri)
     .then(() => {
       console.log("Database connected successfully");
     })

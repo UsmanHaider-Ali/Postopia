@@ -20,16 +20,6 @@ const userSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-    toJSON: {
-      transform: function (doc, ret) {
-        ret.id = ret._id;
-        delete ret._id;
-        delete ret.__v;
-        delete ret.createdAt;
-        delete ret.updatedAt;
-        delete ret.password;
-      },
-    },
   }
 );
 

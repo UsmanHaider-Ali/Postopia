@@ -1,5 +1,5 @@
 # Ignore node_modules directory
-node_modules/
+node_modules/*
 
 # Ignore private keys
 *.key
@@ -13,3 +13,6 @@ node_modules/
 
 # Ignore specific files or directories
 secret-config.json
+
+#Ignore all files in uploads directory
+uploads/*
